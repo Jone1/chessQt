@@ -13,31 +13,31 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    filed.cpp \
-    piece.cpp \
-    pawn.cpp \
-    rook.cpp \
-    bishop.cpp \
-    queen.cpp \
-    king.cpp \
-    knight.cpp \
-    whitepawn.cpp \
-    blackpawn.cpp
+        views/mainwindow.cpp \
+    views/filed.cpp \
+    pieces/piece.cpp \
+    pieces/pawn.cpp \
+    pieces/rook.cpp \
+    pieces/bishop.cpp \
+    pieces/queen.cpp \
+    pieces/king.cpp \
+    pieces/knight.cpp \
+    pieces/whitepawn.cpp \
+    pieces/blackpawn.cpp
 
-HEADERS  += mainwindow.h \
-    filed.h \
-    piece.h \
-    pawn.h \
-    rook.h \
-    bishop.h \
-    queen.h \
-    king.h \
-    knight.h \
-    whitepawn.h \
-    blackpawn.h
+HEADERS  += views/mainwindow.h \
+    views/filed.h \
+    pieces/piece.h \
+    pieces/pawn.h \
+    pieces/rook.h \
+    pieces/bishop.h \
+    pieces/queen.h \
+    pieces/king.h \
+    pieces/knight.h \
+    pieces/whitepawn.h \
+    pieces/blackpawn.h
 
-FORMS    += mainwindow.ui
+FORMS    += ui/mainwindow.ui
 
 DISTFILES +=
 
