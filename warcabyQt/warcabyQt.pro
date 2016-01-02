@@ -21,7 +21,9 @@ SOURCES += main.cpp\
     bishop.cpp \
     queen.cpp \
     king.cpp \
-    knight.cpp
+    knight.cpp \
+    whitepawn.cpp \
+    blackpawn.cpp
 
 HEADERS  += mainwindow.h \
     filed.h \
@@ -31,7 +33,9 @@ HEADERS  += mainwindow.h \
     bishop.h \
     queen.h \
     king.h \
-    knight.h
+    knight.h \
+    whitepawn.h \
+    blackpawn.h
 
 FORMS    += mainwindow.ui
 

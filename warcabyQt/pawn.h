@@ -3,14 +3,14 @@
 
 #include "piece.h"
 
-class Pawn : public Piece
+class Pawn : public AbstractPiece
 {
-    using Piece::Piece;
+    using AbstractPiece::AbstractPiece;
 
     QString srcWhite();
     QString srcBlack();
 
-    bool moveValidator(const int x, const int y);
+    bool virtual moveValidator(const int x, const int y);
 };
 
 #endif // PAWN_H

@@ -3,12 +3,14 @@
 
 #include "piece.h"
 
-class Knight : public Piece
+class Knight : public AbstractPiece
 {
-    using Piece::Piece;
+    using AbstractPiece::AbstractPiece;
 
     QString srcWhite();
     QString srcBlack();
+
+    bool can_jump = false;
 
     bool moveValidator(const int x, const int y);
 

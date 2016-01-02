@@ -14,9 +14,6 @@ QString Rook::srcBlack()
 
 bool Rook::moveValidator(const int x, const int y)
 {
-    if(!this->isSelfHere(x, y)){ // Any own pice here?
-        return false;
-    }
 
     if(y != this->y && x != this->x){
         return false;

@@ -13,10 +13,6 @@ QString Bishop::srcBlack()
 
 bool Bishop::moveValidator(const int x, const int y)
 {
-    if(!this->isSelfHere(x, y)){ // Any own pice here?
-        return false;
-    }
-
     if(abs(x-this->x) != abs(y-this->y)){
         return false;
     }

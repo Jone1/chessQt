@@ -12,5 +12,8 @@ QString Queen::srcBlack()
 
 bool Queen::moveValidator(const int x, const int y)
 {
-    return false;
+    if(abs(x-this->x) != abs(y-this->y) && y != this->y && x != this->x){
+        return false;
+    }
+    return this->isEmptyTo(x, y);
 }

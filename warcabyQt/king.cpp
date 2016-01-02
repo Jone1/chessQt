@@ -14,11 +14,13 @@ QString King::srcBlack()
 
 bool King::moveValidator(const int x, const int y)
 {
-    if(!this->isSelfHere(x, y)){ // Any own pice here?
-        return false;
-    }
     if(abs(this->x-x) > 1 || abs(this->y-y) > 1){
         return false;
     }
     return true;
+}
+
+void King::makeNotAlive()
+{
+    this->alive = false;
 }

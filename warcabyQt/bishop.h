@@ -3,9 +3,9 @@
 
 #include "piece.h"
 
-class Bishop :  public Piece
+class Bishop :  public AbstractPiece
 {
-    using Piece::Piece;
+    using AbstractPiece::AbstractPiece;
 
     QString srcWhite();
     QString srcBlack();

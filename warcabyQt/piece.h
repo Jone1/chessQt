@@ -7,19 +7,19 @@
 
 
 
-class Piece
+class AbstractPiece
 {
 public:
-    explicit Piece(int x, int y, bool color);
+    explicit AbstractPiece(int x, int y, bool color);
 
     QString virtual srcWhite();
     QString virtual srcBlack();
 
-    int x;
-    int y;
-    bool color;
-    bool alive = true;
-    bool can_jump = false;
+    int x; //
+    int y; // Current piece position.
+    bool color; // Color false - white, true - black
+    bool alive = true; // Is alice, if not - pieces won't be diplay.
+
 
     bool virtual moveValidator(const int x, const int y);
 
@@ -28,10 +28,12 @@ public:
     bool isEmpty(const int x, const int y);
     bool isEmptyTo(const int x, const int y);
 
-    void makeNotAlive();
+    void virtual makeNotAlive();
     void move(int x, int y);
+
+    virtual ~AbstractPiece();
 };
 
-extern Piece* chessboard[8][8];
+extern AbstractPiece* chessboard[8][8];
 
 #endif // PIECE_H

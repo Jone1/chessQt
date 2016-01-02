@@ -76,6 +76,9 @@
    <property name="text">
     <string>Nowa gra</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

@@ -3,15 +3,15 @@
 
 #include "piece.h"
 
-class King : public Piece
+class King : public AbstractPiece
 {
-    using Piece::Piece;
+    using AbstractPiece::AbstractPiece;
 
     QString srcWhite();
     QString srcBlack();
 
     bool moveValidator(const int x, const int y);
-
+    void makeNotAlive();
 
 };
 
