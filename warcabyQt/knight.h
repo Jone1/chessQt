@@ -10,7 +10,7 @@ class Knight : public AbstractPiece
     QString srcWhite();
     QString srcBlack();
 
-    bool can_jump = false;
+    bool can_jump = true;
 
     bool moveValidator(const int x, const int y);
 

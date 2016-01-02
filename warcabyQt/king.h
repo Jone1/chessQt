@@ -11,7 +11,6 @@ class King : public AbstractPiece
     QString srcBlack();
 
     bool moveValidator(const int x, const int y);
-    void makeNotAlive();
 
 };
 

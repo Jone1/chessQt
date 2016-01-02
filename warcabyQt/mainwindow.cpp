@@ -4,7 +4,9 @@
 #include "blackpawn.h"
 #include "whitepawn.h"
 
-myLabel* labels[8][8];
+#include <QMessageBox>
+
+myLabel* labels[8][8]; // 8x8 array of labels.
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -26,8 +28,6 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     connect(ui->actionNowa_gra, SIGNAL(triggered()), this, SLOT(slotNewGame()));
-
-
 }
 
 void MainWindow::createPiece()
@@ -47,6 +47,7 @@ void MainWindow::createPiece()
     chessboard[7][2] = new Bishop(7, 2, true);
     chessboard[7][4] = new King(7, 4, true);
     chessboard[7][3] = new Queen(7, 3, true);
+    this->black_king = chessboard[7][4];
     chessboard[7][5] = new Bishop(7, 5, true);
     chessboard[7][6] = new Knight(7, 6, true);
     chessboard[7][7] = new Rook(7, 6, true);
@@ -56,6 +57,7 @@ void MainWindow::createPiece()
     chessboard[0][1] = new Knight(0, 1, false);
     chessboard[0][2] = new Bishop(0, 2, false);
     chessboard[0][4] = new King(0, 4, false);
+    this->white_king = chessboard[0][4];
     chessboard[0][3] = new Queen(0, 3, false);
     chessboard[0][5] = new Bishop(0, 5, false);
     chessboard[0][6] = new Knight(0, 6, false);
@@ -107,6 +109,18 @@ void MainWindow::movePiece(int x, int y)
     this->refreshPiece();
     this->next_move = !this->next_move;
 
+    if(!this->black_king->alive){
+        QMessageBox msgBox;
+        msgBox.setText("White wins.");
+        msgBox.exec();
+        this->newGame();
+    } else if(!this->white_king->alive){
+        QMessageBox msgBox;
+        msgBox.setText("Black wins.");
+        msgBox.exec();
+        this->newGame();
+    }
+
 }
 
 void MainWindow::removePiece()
@@ -115,16 +129,22 @@ void MainWindow::removePiece()
         for(int j = 0; j<8; j++){
             if (chessboard[i][j]){
                 delete chessboard[i][j];
+                chessboard[i][j]=NULL;
             }
         }
     }
 }
 
-void MainWindow::slotNewGame()
+void MainWindow::newGame()
 {
     this->removePiece();
     this->createPiece();
     this->refreshPiece();
+}
+
+void MainWindow::slotNewGame()
+{
+    this->newGame();
 }
 
 

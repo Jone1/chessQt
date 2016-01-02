@@ -19,8 +19,3 @@ bool King::moveValidator(const int x, const int y)
     }
     return true;
 }
-
-void King::makeNotAlive()
-{
-    this->alive = false;
-}
